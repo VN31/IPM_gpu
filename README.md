@@ -8,7 +8,7 @@ The main branch solves the limit case of infinite anisotropy while the second br
 The center interface is initialy straigth with random (+-1) values.
 
 ## Dissipation: 
-On the base version, a diffusion ($\nu \Delta \theta$)is added to prevent numerical instabilities. It can be removed by changing the "reg_type" parameter to something else in Use_Me.jl. Also, hyper-diffusion can be used by changing "hp" (not working yet but will be implemented soon). 
+On the base version, a diffusion ( $Eq + \nu \Delta \theta$ )is added to prevent numerical instabilities. It can be removed by changing the "reg_type" parameter to something else in Use_Me.jl. Also, hyper-diffusion can be used by changing "hp" (not working yet but will be implemented soon). 
 
 ## Output:
 The scalar field is saved every "nout" time step in "path" as "ffields[time].h5" in h5 format. 
