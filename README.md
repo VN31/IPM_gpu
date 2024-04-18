@@ -1,8 +1,12 @@
 # IPM_gpu
 GPU solver for the Incompressible Porous Medium (IPM) equations using pseudo spectral method on a doubly periodic domain. The main branch solves the limit case of infinite anisotropy while the second branch is dedicated to the classical IPM equations. 
 
-Required packages : HDF5, CUDA, FFTW, AbstractFFTs: fftfreq, rfftfreq , LinearAlgebra: mul!, ldiv!, TickTock, Random, KernelAbstractions. (hints: open Julia REPL, do: crtl + ] ,then write: add *package_name* ).
-Then just launch the Use_Me.jl file with julia on a terminal (hints: julia -e 'include("/home/nvalade/Yulia/Digital/sqg_gpu/src/Use_Me.jl")'  ).
+Required packages : HDF5, CUDA, FFTW, AbstractFFTs: fftfreq, rfftfreq , LinearAlgebra: mul!, ldiv!, TickTock, Random, KernelAbstractions. 
+(hints: open Julia REPL, do: crtl + ] ,then write: add *package_name* ).
+
+To use : run the Use_Me.jl file with julia on a terminal
+(hint: julia -e 'include("/home/nvalade/Yulia/Digital/sqg_gpu/src/Use_Me.jl")'  ).
+
 ## Initial condition: 
 +-1 on the vertical direction. The interface at the bottom/top boundaries (due to periodicity) is smoothen in order to avoid any instability there. 
 The center interface is initialy straigth with random (+-1) values.
