@@ -22,16 +22,16 @@
     Mux = TA(Mux)
     Muy = TA(Muy)
 
-    @. Mux =    Ky/Kx # Kx*Ky / (Kx^2+Ky^2)^(2/2)
-    @. Muy =    -1.0 #-Kx^2 / (Kx^2+Ky^2)^(2/2)
+    @. Mux =    Kx*Ky / (Kx^2+Ky^2)^(2/2)
+    @. Muy =    -Kx^2 / (Kx^2+Ky^2)^(2/2)
 
     if params.r_type=="Laplacian"
         Mk2    =  similar(Kx)
         @. Mk2 = (Ky^2)^(hp)
     end
 
-    CUDA.@allowscalar  Mux[1,1:end] .= 0.0 # Mux[1,1] = 0.0 #Mux[Kx.==0] = 0.0 
-    CUDA.@allowscalar  Muy[1,1:end] .= 0.0 #Muy[1,1] = 0.0 
+    CUDA.@allowscalar  Mux[1,1:end] .= Mux[1,1] = 0.0 
+    CUDA.@allowscalar  Muy[1,1:end] .= Muy[1,1] = 0.0 
 
     # 2/3 dealiasing filter 
     ks_lim_x = Ns[1]/3
