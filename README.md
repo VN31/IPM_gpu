@@ -5,7 +5,7 @@ Required packages : HDF5, CUDA, FFTW, AbstractFFTs: fftfreq, rfftfreq , LinearAl
 Example: open Julia REPL, do: crtl + ] ,then write: add *package_name* .
 
 To use : run the Use_Me.jl file with julia on a terminal
-Example: julia -e 'include("/home/nvalade/Yulia/Digital/sqg_gpu/src/Use_Me.jl")' 
+Example: julia -e 'include("your_path/IPM_gpu/src/Use_Me.jl")' 
 
 ## Initial condition: 
 +-1 on the vertical direction. The interface at the bottom/top boundaries (due to periodicity) is smoothen in order to avoid any instability there. 
